@@ -8,8 +8,8 @@ namespace skarzycki.robert.csharp.logger.lib
 {
     public enum Severity
     {
-        Normal,
+        Error,
         Warning,
-        Debug
+        Info
     }
 }
