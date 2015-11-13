@@ -13,8 +13,10 @@ namespace skarzycki.robert.csharp.logger.lib
 
         public void LogException(Exception exception)
         {
-            var className = exception.TargetSite.ReflectedType.FullName;
-            var functionName = exception.TargetSite.Name;
+            var targetSite = exception.TargetSite;
+            
+            var className = targetSite != null && targetSite.ReflectedType!=null ? targetSite.ReflectedType.FullName : null;
+            var functionName = targetSite != null ? targetSite.Name : null;
             var message = exception.Message;
 
             var logEntry = new LogEntry

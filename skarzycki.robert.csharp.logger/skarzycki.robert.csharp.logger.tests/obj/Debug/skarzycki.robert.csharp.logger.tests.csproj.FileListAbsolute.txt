@@ -1,0 +1,11 @@
+D:\Projekty\GitHub\skarzycki.robert.opensource\skarzycki.robert.csharp.logger\skarzycki.robert.csharp.logger.tests\bin\Debug\skarzycki.robert.csharp.logger.tests.dll
+D:\Projekty\GitHub\skarzycki.robert.opensource\skarzycki.robert.csharp.logger\skarzycki.robert.csharp.logger.tests\bin\Debug\skarzycki.robert.csharp.logger.tests.pdb
+D:\Projekty\GitHub\skarzycki.robert.opensource\skarzycki.robert.csharp.logger\skarzycki.robert.csharp.logger.tests\bin\Debug\Moq.dll
+D:\Projekty\GitHub\skarzycki.robert.opensource\skarzycki.robert.csharp.logger\skarzycki.robert.csharp.logger.tests\bin\Debug\skarzycki.robert.csharp.logger.lib.dll
+D:\Projekty\GitHub\skarzycki.robert.opensource\skarzycki.robert.csharp.logger\skarzycki.robert.csharp.logger.tests\bin\Debug\skarzycki.robert.csharp.logger.lib.pdb
+D:\Projekty\GitHub\skarzycki.robert.opensource\skarzycki.robert.csharp.logger\skarzycki.robert.csharp.logger.tests\bin\Debug\Moq.xml
+D:\Projekty\GitHub\skarzycki.robert.opensource\skarzycki.robert.csharp.logger\skarzycki.robert.csharp.logger.tests\obj\Debug\skarzycki.robert.csharp.logger.tests.csprojResolveAssemblyReference.cache
+D:\Projekty\GitHub\skarzycki.robert.opensource\skarzycki.robert.csharp.logger\skarzycki.robert.csharp.logger.tests\obj\Debug\skarzycki.robert.csharp.logger.tests.dll
+D:\Projekty\GitHub\skarzycki.robert.opensource\skarzycki.robert.csharp.logger\skarzycki.robert.csharp.logger.tests\obj\Debug\skarzycki.robert.csharp.logger.tests.pdb
+D:\Projekty\GitHub\skarzycki.robert.opensource\skarzycki.robert.csharp.logger\skarzycki.robert.csharp.logger.tests\bin\Debug\nunit.framework.dll
+D:\Projekty\GitHub\skarzycki.robert.opensource\skarzycki.robert.csharp.logger\skarzycki.robert.csharp.logger.tests\bin\Debug\nunit.framework.xml
