@@ -4,7 +4,12 @@ namespace skarzycki.robert.csharp.logger.lib
 {
     public class LogEntry
     {
-        public DateTime Timestamp { get; set; }
+        public LogEntry()
+        {
+            Timestamp = DateTime.Now;
+        }
+
+        public DateTime Timestamp { get; private set; }
         public string Message { get; set; }
         public Severity Severity { get; set; }
         public string ClassName { get; set; }

@@ -11,9 +11,21 @@ namespace skarzycki.robert.csharp.logger.lib
             _logWriter = logWriter;
         }
 
-        public void LogException()
+        public void LogException(Exception exception)
         {
-            throw new NotImplementedException();
+            var className = exception.TargetSite.ReflectedType.FullName;
+            var functionName = exception.TargetSite.Name;
+            var message = exception.Message;
+
+            var logEntry = new LogEntry
+            {
+                ClassName = className,
+                FunctionName = functionName,
+                Message = message,
+                Severity = Severity.Error
+            };
+
+            _logWriter.Write(logEntry);
         }
 
         public void LogWarning()
