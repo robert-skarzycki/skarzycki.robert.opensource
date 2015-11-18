@@ -11,6 +11,8 @@ namespace skarzycki.robert.csharp.logger.tests
     [TestClass]
     public class LoggerTests
     {
+        #region LogException
+
         [TestMethod]
         public void LogException_SHOULD_log_with_severity_Error()
         {
@@ -41,6 +43,62 @@ namespace skarzycki.robert.csharp.logger.tests
 
             var sut = new Logger(fakeWriter.Object);
             NAssert.DoesNotThrow(() => sut.LogException(dummyException));
+        }
+
+        #endregion
+
+        #region LogWarning
+
+        [TestMethod]
+        public void LogWarning_SHOULD_log_with_severity_Warning()
+        {
+            const string dummyMsg = "dummy msg";
+            var fakeWriter = new Mock<ILogWriter>();
+
+            var sut = new Logger(fakeWriter.Object);
+            sut.LogWarning(dummyMsg);
+
+            fakeWriter.Verify(m => m.Write(Match.Create<LogEntry>(e => e.Severity == Severity.Warning)));
+        }
+
+        [TestMethod]
+        public void LogWarning_SHOULD_log_caller_functionName()
+        {
+            var fakeWriter = new Mock<ILogWriter>();
+
+            var sut = new Logger(fakeWriter.Object);
+            NamedCaller.MethodCallingLogWarning(sut);
+
+            fakeWriter.Verify(m => m.Write(Match.Create<LogEntry>(e => string.Equals(e.FunctionName, "MethodCallingLogWarning"))));
+        }
+
+        [TestMethod]
+        public void LogWarning_SHOULD_log_caller_classname()
+        {
+            var fakeWriter = new Mock<ILogWriter>();
+
+            var sut = new Logger(fakeWriter.Object);
+            NamedCaller.MethodCallingLogWarning(sut);
+
+            fakeWriter.Verify(m => m.Write(Match.Create<LogEntry>(e => string.Equals(e.ClassName, "skarzycki.robert.csharp.logger.tests.LoggerTests+NamedCaller"))));
+        }
+
+        #endregion
+
+        #region LogInfo
+        #endregion
+
+        private static class NamedCaller
+        {
+            public static void MethodCallingLogWarning(Logger logger, string msg = null)
+            {
+                logger.LogWarning(msg);
+            }
+
+            public static void MethodCallingLogInfo(Logger logger, string msg = null)
+            {
+                logger.LogInfo(msg);
+            }
         }
 
         private class NullTargetSiteFakeException : Exception

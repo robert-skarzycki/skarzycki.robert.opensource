@@ -43,6 +43,6 @@ Temporary Items
 .apdisk
 *.cache
 TemporaryGeneratedFile*
-*/obj/*
 *.suo
-*/packages/*
+packages/
+obj/

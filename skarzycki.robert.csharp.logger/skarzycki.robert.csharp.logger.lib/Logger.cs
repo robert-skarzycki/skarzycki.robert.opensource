@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Reflection;
 
 namespace skarzycki.robert.csharp.logger.lib
 {
@@ -30,14 +32,46 @@ namespace skarzycki.robert.csharp.logger.lib
             _logWriter.Write(logEntry);
         }
 
-        public void LogWarning()
+        public void LogWarning(string message)
         {
-            throw new NotImplementedException();
+            var caller = GetCaller();
+
+            var className = caller != null && caller.ReflectedType != null ? caller.ReflectedType.FullName : null;
+            var functionName = caller != null ? caller.Name : null;
+
+            var logEntry = new LogEntry
+            {
+                ClassName = className,
+                FunctionName = functionName,
+                Message = message,
+                Severity = Severity.Warning
+            };
+
+            _logWriter.Write(logEntry);
         }
 
-        public void LogInfo()
+        public void LogInfo(string message)
         {
-            throw new NotImplementedException();
+            var caller = GetCaller();
+
+            var className = caller != null && caller.ReflectedType != null ? caller.ReflectedType.FullName : null;
+            var functionName = caller != null ? caller.Name : null;
+
+            var logEntry = new LogEntry
+            {
+                ClassName = className,
+                FunctionName = functionName,
+                Message = message,
+                Severity = Severity.Info
+            };
+
+            _logWriter.Write(logEntry);
+        }
+
+        private MethodBase GetCaller()
+        {
+            var frame = new StackFrame(2);
+            return frame.GetMethod();
         }
     }
 }
